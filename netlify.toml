@@ -1,0 +1,34 @@
+[build]
+  publish = "."
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[redirects]]
+  from = "/windows"
+  to = "/windows.html"
+  status = 200
+[[redirects]]
+  from = "/doors"
+  to = "/doors.html"
+  status = 200
+[[redirects]]
+  from = "/siding"
+  to = "/siding.html"
+  status = 200
+[[redirects]]
+  from = "/gallery"
+  to = "/gallery.html"
+  status = 200
+[[redirects]]
+  from = "/about"
+  to = "/about.html"
+  status = 200
+[[redirects]]
+  from = "/contact"
+  to = "/contact.html"
+  status = 200

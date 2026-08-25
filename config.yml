@@ -1,0 +1,126 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "site_content"
+    label: "Website Content"
+    files:
+      - name: "main_site"
+        label: "Main Website Copy & Images"
+        file: "content/site.json"
+        format: "json"
+        fields:
+          - label: "Brand & Contact"
+            name: "brand"
+            widget: "object"
+            fields:
+              - {label: "Business Name", name: "name", widget: "string"}
+              - {label: "Phone", name: "phone", widget: "string"}
+              - {label: "Email", name: "email", widget: "string"}
+              - {label: "Location", name: "location", widget: "string"}
+              - {label: "Service Area Line", name: "service_radius", widget: "string"}
+              - {label: "Tagline", name: "tagline", widget: "string"}
+              - {label: "Hearth Financing URL", name: "financing_url", widget: "string"}
+              - {label: "Google Reviews URL", name: "google_reviews_url", widget: "string"}
+              - {label: "Instagram URL", name: "instagram_url", widget: "string", required: false}
+              - {label: "Facebook URL", name: "facebook_url", widget: "string", required: false}
+              - {label: "LinkedIn URL", name: "linkedin_url", widget: "string", required: false}
+          - label: "Home Page"
+            name: "home"
+            widget: "object"
+            fields:
+              - {label: "Hero Eyebrow", name: "hero_eyebrow", widget: "string"}
+              - {label: "Hero Headline", name: "hero_title", widget: "string"}
+              - {label: "Hero Text", name: "hero_text", widget: "text"}
+              - {label: "Hero Image", name: "hero_image", widget: "image", required: false}
+              - {label: "Who We Are Title", name: "who_title", widget: "string"}
+              - {label: "Who We Are Copy", name: "who_text", widget: "text"}
+              - {label: "Who We Are Image", name: "who_image", widget: "image", required: false}
+              - {label: "Virtual Consultation Title", name: "virtual_title", widget: "string"}
+              - {label: "Virtual Consultation Copy", name: "virtual_text", widget: "text"}
+              - {label: "Launch Home Title", name: "launch_title", widget: "string"}
+              - {label: "Launch Home Copy", name: "launch_text", widget: "text"}
+              - {label: "Final CTA Title", name: "final_title", widget: "string"}
+              - {label: "Final CTA Copy", name: "final_text", widget: "text"}
+          - label: "About Page"
+            name: "about"
+            widget: "object"
+            fields:
+              - {label: "Hero Title", name: "hero_title", widget: "string"}
+              - {label: "Story Title", name: "story_title", widget: "string"}
+              - {label: "Our Story Copy", name: "story_text", widget: "text"}
+              - {label: "Team Image", name: "team_image", widget: "image", required: false}
+          - label: "Windows Page"
+            name: "windows"
+            widget: "object"
+            fields:
+              - {label: "Hero Title", name: "hero_title", widget: "string"}
+              - {label: "Hero Text", name: "hero_text", widget: "text"}
+              - {label: "Hero Image", name: "hero_image", widget: "image", required: false}
+          - label: "Doors Page"
+            name: "doors"
+            widget: "object"
+            fields:
+              - {label: "Hero Title", name: "hero_title", widget: "string"}
+              - {label: "Hero Text", name: "hero_text", widget: "text"}
+              - {label: "Hero Image", name: "hero_image", widget: "image", required: false}
+          - label: "Siding Page"
+            name: "siding"
+            widget: "object"
+            fields:
+              - {label: "Hero Title", name: "hero_title", widget: "string"}
+              - {label: "Hero Text", name: "hero_text", widget: "text"}
+              - {label: "Hero Image", name: "hero_image", widget: "image", required: false}
+          - label: "Financing Page"
+            name: "financing"
+            widget: "object"
+            fields:
+              - {label: "Hero Title", name: "hero_title", widget: "string"}
+              - {label: "Hero Text", name: "hero_text", widget: "text"}
+              - {label: "Disclaimer", name: "disclaimer", widget: "text"}
+          - label: "Launch Home Page"
+            name: "launch"
+            widget: "object"
+            fields:
+              - {label: "Hero Title", name: "hero_title", widget: "string"}
+              - {label: "Hero Text", name: "hero_text", widget: "text"}
+              - {label: "Requirements", name: "requirements", widget: "text"}
+          - label: "Reviews Page"
+            name: "reviews"
+            widget: "object"
+            fields:
+              - {label: "Hero Title", name: "hero_title", widget: "string"}
+              - {label: "Hero Text", name: "hero_text", widget: "text"}
+          - label: "Contact Page"
+            name: "contact"
+            widget: "object"
+            fields:
+              - {label: "Hero Title", name: "hero_title", widget: "string"}
+              - {label: "Hero Text", name: "hero_text", widget: "text"}
+      - name: "gallery_reviews"
+        label: "Gallery & Reviews"
+        file: "content/gallery.json"
+        format: "json"
+        fields:
+          - label: "Projects"
+            name: "projects"
+            widget: "list"
+            summary: "{{fields.title}} — {{fields.city}}"
+            fields:
+              - {label: "Project Title", name: "title", widget: "string"}
+              - {label: "Category", name: "category", widget: "select", options: ["Windows", "Doors", "Siding", "Black Windows", "White Windows", "Specialty Installs", "Brick Homes"]}
+              - {label: "City", name: "city", widget: "string"}
+              - {label: "Product Used", name: "product", widget: "string"}
+              - {label: "Project Image", name: "image", widget: "image", required: false}
+          - label: "Reviews"
+            name: "reviews"
+            widget: "list"
+            summary: "{{fields.name}} — {{fields.location}}"
+            fields:
+              - {label: "Homeowner Name", name: "name", widget: "string"}
+              - {label: "Location", name: "location", widget: "string"}
+              - {label: "Review Text", name: "text", widget: "text"}
